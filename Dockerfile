@@ -14,6 +14,8 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get -qq install -y vim git wget curl sudo lsyncd openssh-server && \
 	mkdir /etc/lsyncd && \
+	mkdir /root/src && \
+	mkdir /root/dest && \
 	touch /etc/lsyncd/lsyncd.conf.lua && \
 	touch /etc/lsyncd/lsyncd.log && \
 	touch /etc/lsyncd/lsyncd.status && \
@@ -26,8 +28,8 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     echo "}" >> /etc/lsyncd/lsyncd.conf.lua && \
 	echo "sync {" >> /etc/lsyncd/lsyncd.conf.lua && \
     echo "	default.direct," >> /etc/lsyncd/lsyncd.conf.lua && \
-    echo "	source    = \"/tmp/src\"," >> /etc/lsyncd/lsyncd.conf.lua && \
-    echo "	target    = \"/tmp/dest\"," >> /etc/lsyncd/lsyncd.conf.lua && \
+    echo "	source    = \"/root/src\"," >> /etc/lsyncd/lsyncd.conf.lua && \
+    echo "	target    = \"/root/dest\"," >> /etc/lsyncd/lsyncd.conf.lua && \
     echo "	delay = 1" >> /etc/lsyncd/lsyncd.conf.lua && \
     echo "	maxProcesses = 1" >> /etc/lsyncd/lsyncd.conf.lua && \
     echo "}" >> /etc/lsyncd/lsyncd.conf.lua
