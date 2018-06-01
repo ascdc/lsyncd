@@ -17,6 +17,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	touch /etc/lsyncd/lsyncd.conf.lua && \
 	touch /etc/lsyncd/lsyncd.log && \
 	touch /etc/lsyncd/lsyncd.status && \
+	touch /var/run/lsyncd.pid && \
 	echo "settings {" >> /etc/lsyncd/lsyncd.conf.lua && \
 	echo "	logfile      =\"/etc/lsyncd/lsyncd.log\"," >> /etc/lsyncd/lsyncd.conf.lua && \
 	echo "	statusFile   =\"/etc/lsyncd/lsyncd.status\"," >> /etc/lsyncd/lsyncd.conf.lua && \
