@@ -22,7 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	echo "	statusFile   =\"/etc/lsyncd/lsyncd.status\"," >> /etc/lsyncd/lsyncd.conf.lua && \
 	echo "	maxProcesses = 8," >> /etc/lsyncd/lsyncd.conf.lua && \
 	echo "	delay=10" >> /etc/lsyncd/lsyncd.conf.lua && \
-    echo "}" >> /etc/lsyncd/lsyncd.conf.lua
+    echo "}" >> /etc/lsyncd/lsyncd.conf.lua && \
 	echo "sync {" >> /etc/lsyncd/lsyncd.conf.lua && \
     echo "	default.direct," >> /etc/lsyncd/lsyncd.conf.lua && \
     echo "	source    = \"/tmp/src\"," >> /etc/lsyncd/lsyncd.conf.lua && \
